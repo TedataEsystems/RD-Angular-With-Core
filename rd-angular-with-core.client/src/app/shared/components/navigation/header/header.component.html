@@ -1,0 +1,71 @@
+
+
+<mat-toolbar>
+    <div>
+  
+        <a routerLink="/">
+            <img src="../../../../assets/image/ccc.png" class="teamname" alt="Esystem team" height="36" width="150"/>
+  
+        </a>
+    </div>
+  
+    <div fxFlex fxLayout fxLayoutAlign="end" >
+        <ul fxLayout fxLayoutGap="5px" class="navigation.items top">
+  
+  
+            <li>
+              <button mat-icon-button>
+                <mat-icon>account_circle</mat-icon>
+              </button>
+              <span> {{userName}}  </span>
+            </li>
+  
+            <li>
+              <button mat-icon-button (click)="logOut()" matTooltip="Logout ">
+                <mat-icon>logout</mat-icon>
+              </button>
+            </li>
+  
+  
+  
+  
+  
+        </ul>
+    </div>
+  
+  </mat-toolbar>
+  
+  
+  
+  
+  <mat-toolbar>
+    <div class="brand-box">
+      <img src="../../../../assets/image/we-Logo/we-black.jpg" width="70" height="65px">
+  
+    </div>
+    <div class="brandTitle">
+    <span class="brand ml-3">RD Management</span>
+    </div>
+       <span class="example-spacer"></span>
+    
+  
+    <div class="">
+      <button
+        class="my-1 bg-transparent"
+        mat-icon-button
+        (click)="onToggleSidenav()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+  
+    <!-- <div fxFlex fxLayout fxLayoutAlign="end">
+      <ul fxLayout fxLayoutGap="10px" class="navigation.items seconed">
+      
+  
+          
+  
+      </ul>
+    </div> -->
+  </mat-toolbar>
+  

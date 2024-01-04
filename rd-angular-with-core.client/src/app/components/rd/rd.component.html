@@ -1,0 +1,117 @@
+
+ <mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>
+            List RDs Details 
+
+
+
+            
+             
+              <button  mat-button [matMenuTriggerFor]="menu" class="opt px-2 " [hidden]="esptFlag" >
+                <mat-icon class="">download</mat-icon>
+                <span class="txt mr-1"> Export Excel</span>
+              </button>
+              <mat-menu #menu="matMenu" [hidden]="esptFlag">
+            
+                <button mat-menu-item  class="opt txt"    (click)="ExportTOExcel()" ><mat-icon class="mr-1">file_download</mat-icon> Export Reserved TO Excel</button> 
+                <button mat-menu-item  class="opt txt"    (click)="ExportFreeTOExcel()" ><mat-icon  class="mr-1">file_download</mat-icon> Export Free TO Excel</button> 
+          
+          
+              </mat-menu>
+              <button mat-button class="opt mx-1 px-2 txt"  [hidden]="isNotAdmin"    (click)="onRangeCreate()" ><mat-icon class="add-new ico mr-1">add</mat-icon> Add RD IDs Range</button>
+              <button mat-button class="opt px-2 txt"  [hidden]="esptFlag"   (click)="onCreate()" ><mat-icon class="add-new ico mr-1">add</mat-icon> Create</button> 
+             
+             
+           
+        </mat-card-title>
+    </mat-card-header>
+    <mat-divider class="my-1"></mat-divider>
+<div class="search-div w-100" fxLayout="row">
+    <mat-form-field class="search-form-field sr" >
+        <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()"> 
+       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+            <mat-icon>close</mat-icon>
+        </button> 
+    </mat-form-field>
+   
+</div>
+
+  <app-loader *ngIf="dataSource==null;else table"></app-loader>
+<ng-template #table>
+    <div class="example-container mat-elevation-z8">
+
+        <mat-table [dataSource]="dataSource" #table matSort (matSortChange)="sortData($event)" matSortActive="name" matSortDirection="asc" matSortDisableClear>
+            <ng-container matColumnDef="action">  
+                <mat-header-cell *matHeaderCellDef> {{'Action'}}</mat-header-cell>
+                <mat-cell *matCellDef="let row" data-label="Action">
+                    <button mat-button   class="btn-success  font-weight-bolder"
+                    matTooltip="Edit"   (click)="onEdit(row)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-button  class="btn-danger  mx-1 font-weight-bolder" [hidden]="isNotAdmin" (click)="onDelete(row.id)" matTooltip="Delete">
+                        <mat-icon>delete_forever</mat-icon>
+                    </button>
+                </mat-cell>
+        
+            </ng-container>
+            <ng-container matColumnDef="rD_Id">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> {{'RD ID'  }}</mat-header-cell>
+                <mat-cell *matCellDef="let element" data-label="rD_Id"> {{element.rD_Id}} </mat-cell>
+            </ng-container> 
+       
+        
+            <ng-container matColumnDef="customerName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>   {{'Customer Name'  }} </mat-header-cell>
+                <mat-cell *matCellDef="let element" data-label="Customer Name"> {{element.customerName}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="vrfName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header>   {{'VRF Name'  }} </mat-header-cell>
+                <mat-cell *matCellDef="let element" data-label="VRF Name"> {{element.vrfName}} </mat-cell>
+            </ng-container>
+   
+           <ng-container matColumnDef="creationDate"> 
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Creation date'   }}</mat-header-cell>
+            <mat-cell *matCellDef="let element" data-label="Creation date"> {{element.creationDate| date:'medium'}} </mat-cell>
+                </ng-container>
+               <ng-container matColumnDef="modificationDate"> 
+            <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Modified date'  }} </mat-header-cell>
+            <mat-cell *matCellDef="let element" data-label="Modified date"> {{element.modificationDate| date:'medium'}} </mat-cell>
+                </ng-container>
+            <ng-container matColumnDef="createdBy"> 
+             <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Created by'  }} </mat-header-cell>
+             <mat-cell *matCellDef="let element" data-label="Created by"> {{element.createdBy}} </mat-cell>
+              </ng-container>
+             <ng-container matColumnDef="modifyiedBy"> 
+             <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Modified by'   }}</mat-header-cell>
+              <mat-cell *matCellDef="let element" data-label="Modifyied by"> {{element.modifyiedBy}} </mat-cell>
+                 </ng-container>
+           
+               <ng-container matColumnDef="noData">
+                <mat-footer-cell *matFooterCellDef colspan="6">
+                   No Data ...
+                </mat-footer-cell>
+        
+            </ng-container>
+          
+          
+            
+            <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource.data.length==0 && dataSource !=null)}"></mat-footer-row>
+            <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns2;"></mat-row>
+           
+        
+        </mat-table>
+</div>
+</ng-template>
+
+
+<mat-paginator [pageSizeOptions]="[30, 50, 100]"   [pageSize]="30" (page)="pageChanged($event)"  showFirstLastButtons></mat-paginator>
+
+</mat-card>
+
+
+
+<ngx-spinner type="timer">
+    <h5>Loading</h5>
+  </ngx-spinner>

@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RD-Angular-With-Core.Server", "RD-Angular-With-Core.Server\RD-Angular-With-Core.Server.csproj", "{4871C842-7ACE-4634-9DA7-85EAD928CE5B}"
+EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "rd-angular-with-core.client", "rd-angular-with-core.client\rd-angular-with-core.client.esproj", "{E835A6A5-AD9F-447B-9240-03EBB600BF04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RD.Core", "RD.Core\RD.Core.csproj", "{6810CCEB-0C13-4A21-B727-298E4305176B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RD.Domain", "RD.Domain\RD.Domain.csproj", "{50782A9E-A7B2-4260-9BEE-2262E21872A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RD.Services", "RD.Services\RD.Services.csproj", "{2D469301-9367-4A86-9E6D-358FEE27E025}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4871C842-7ACE-4634-9DA7-85EAD928CE5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4871C842-7ACE-4634-9DA7-85EAD928CE5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4871C842-7ACE-4634-9DA7-85EAD928CE5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4871C842-7ACE-4634-9DA7-85EAD928CE5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E835A6A5-AD9F-447B-9240-03EBB600BF04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E835A6A5-AD9F-447B-9240-03EBB600BF04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E835A6A5-AD9F-447B-9240-03EBB600BF04}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E835A6A5-AD9F-447B-9240-03EBB600BF04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E835A6A5-AD9F-447B-9240-03EBB600BF04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E835A6A5-AD9F-447B-9240-03EBB600BF04}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{6810CCEB-0C13-4A21-B727-298E4305176B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6810CCEB-0C13-4A21-B727-298E4305176B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6810CCEB-0C13-4A21-B727-298E4305176B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6810CCEB-0C13-4A21-B727-298E4305176B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50782A9E-A7B2-4260-9BEE-2262E21872A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50782A9E-A7B2-4260-9BEE-2262E21872A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50782A9E-A7B2-4260-9BEE-2262E21872A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50782A9E-A7B2-4260-9BEE-2262E21872A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D469301-9367-4A86-9E6D-358FEE27E025}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D469301-9367-4A86-9E6D-358FEE27E025}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D469301-9367-4A86-9E6D-358FEE27E025}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D469301-9367-4A86-9E6D-358FEE27E025}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9EC95DEF-3ACD-4304-9D33-FB3E968D02F6}
+	EndGlobalSection
+EndGlobal

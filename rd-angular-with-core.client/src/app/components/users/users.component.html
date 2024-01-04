@@ -1,0 +1,93 @@
+
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+      Users
+      </mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+
+        <div class="search-div w-100" fxLayout="row">
+          <mat-form-field class="search-form-field" >
+            <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter($event)"> 
+            <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+                 <mat-icon>close</mat-icon>
+             </button> 
+            
+         </mat-form-field>
+            <div class="generate w-75 text-right pr-3">
+              <form [formGroup]="form" (ngSubmit)="onSubmit()" class="example-form">
+                  <mat-form-field class="example-full-width mr-2">
+                    <mat-label>User Name</mat-label>
+                    <input type="text"  id="picvalid" matInput formControlName="userName"  placeholder="* User Name">
+                   
+                   
+                  </mat-form-field>
+                  <!-- <span style="margin-left: 3px;"> </span> -->
+                  
+                  <mat-form-field class="example-full-widtho mr-1">
+                    <mat-label>Select Type (required)</mat-label>
+                      <mat-select formControlName="roleID"     placeholder="type"  required>
+                        <mat-option value= 1 >Admin</mat-option>
+                        <mat-option value=2>User</mat-option>
+                      </mat-select>
+                    
+                  </mat-form-field>
+                  
+                  <button type="submit" mat-raised-button  [disabled]='isDisable'   class=" sub search example-full-widths">{{'Save'  }}</button>
+    
+                </form>
+              </div>
+           
+          </div>
+        <div class="example-container mat-elevation-z8 mt-2" #TABLE>
+      <!-- <div class="mat-elevation-z8"> -->
+        <mat-table [dataSource]="dataSource" matSort #table>
+      
+       <!-- action Column -->
+     <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Action'  }}</mat-header-cell>
+      <mat-cell *matCellDef="let row" data-label="Action ">
+        <button mat-button (click)="onEdit(row)" matTooltip="edit" class="btn-success">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button class="btn-danger  mx-1 " (click)="onDelete(row.id)" matTooltip="delete">
+          <mat-icon>delete_forever</mat-icon>
+      </button>
+       
+    </mat-cell>
+    </ng-container>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> {{'No ' }}</mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="No"> {{element.id}} </mat-cell>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="userName">
+        <mat-header-cell *matHeaderCellDef mat-sort-header4> {{'User Name'  }} </mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="userName"> {{element.userName}} </mat-cell>
+      </ng-container>
+    
+
+      <ng-container matColumnDef="roleID">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Role'  }} </mat-header-cell>
+        <mat-cell *matCellDef="let element" class="desc" data-label="Order in list">  <span *ngIf="element.roleID === 1">Admin</span>  <span *ngIf="element.roleID === 2">User</span> </mat-cell>
+      </ng-container>
+    
+    
+      
+          <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: columnsToDisplay;">
+          </mat-row>
+        </mat-table>
+      <!-- </ng-template> -->
+    </div>
+        <mat-paginator  [pageSizeOptions]="[20, 50, 100]"   [pageSize]="20" ></mat-paginator>
+    
+    
+  
+    </mat-card>
+    <ngx-spinner type="timer">
+      <h5>Loading</h5>
+    </ngx-spinner>

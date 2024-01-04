@@ -1,0 +1,6 @@
+@RD_Angular_With_Core.Server_HostAddress = http://localhost:5102
+
+GET {{RD_Angular_With_Core.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

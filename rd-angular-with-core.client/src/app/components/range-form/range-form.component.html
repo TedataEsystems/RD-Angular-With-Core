@@ -1,0 +1,58 @@
+<mat-toolbar class="top">
+ 
+  <span class="">RD IDs Range</span>
+ 
+      <div class="w-100 text-right">
+        <button class="btn-dialog-close" mat-button tabIndex="-1" (click)="onClose()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+ </mat-toolbar> 
+    <form  [formGroup]="service.RangeForm" class="normal-form mt-5" (submit)="onSubmit()">
+      <mat-grid-list cols="2" rowHeight="100px">
+        <mat-grid-tile>
+          
+      <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="min" type="number" matInput placeholder="Min*">
+          <mat-error>This field is mandatory.</mat-error>
+        </mat-form-field>
+        </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+ 
+          <div class="controles-container">
+        <mat-form-field>
+          <input formControlName="max" type="number" matInput placeholder="Max*">
+          <mat-error>This field is mandatory.</mat-error>
+         
+
+        </mat-form-field>
+      </div>
+      </mat-grid-tile>
+    
+         
+          
+</mat-grid-list>
+<mat-error class="d-inline-block float-left p-3 font-weight-bolder">{{warn}}</mat-error>
+        <!-- <div class="button-row text-right"> -->
+         
+          <mat-toolbar class="bottom">
+            <div class="button-row w-100 d-flex justify-content-between">
+              <button mat-raised-button class="btn-success" type="submit" [disabled]="service.RangeForm.invalid">Submit</button>
+              <button mat-raised-button class="btn-secondary"  (click)="onClose()">Cancel</button>
+              
+            </div>
+          </mat-toolbar>
+         
+        <!-- </div> -->
+     
+      
+     
+
+
+      </form>
+
+      <ngx-spinner type="timer">
+        <h5>Loading</h5>
+      </ngx-spinner>

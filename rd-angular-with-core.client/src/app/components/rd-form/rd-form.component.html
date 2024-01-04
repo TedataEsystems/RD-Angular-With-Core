@@ -1,0 +1,164 @@
+<mat-toolbar class="top">
+ 
+  <span class="">{{dialogTitle}}</span>
+
+      <div class="w-100 text-right">
+        <button class="btn-dialog-close" mat-button tabIndex="-1" (click)="onClose()">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </div>
+ </mat-toolbar> 
+      <mat-tab-group class="mt-5" mat-align-tabs="center"  *ngIf="!show">
+        <mat-tab label="Customer">
+          <form  [formGroup]="service.CustomerForm" class="normal-form" (submit)="onSubmit()">
+            <input type="hidden" formControlName="id">
+            <mat-grid-list cols="2" rowHeight="150px">
+              <mat-grid-tile>
+                
+            <div class="controles-container">
+              <mat-form-field>
+                <input formControlName="customerName" matInput placeholder="customer Name">
+                <mat-error>This field is mandatory.</mat-error>
+              </mat-form-field>
+              </div>
+              </mat-grid-tile>
+             
+                <mat-grid-tile>
+                  
+              <div class="controles-container">
+              <mat-form-field>
+                <input formControlName="vrfName" matInput placeholder="VRF Name">
+                <mat-error>This field is mandatory.</mat-error>
+              </mat-form-field>
+              </div>
+              </mat-grid-tile>
+              </mat-grid-list>
+              <mat-error class="d-inline-block float-left p-2 font-weight-bolder">{{warn}}</mat-error>
+             
+              <mat-toolbar class="bottom">
+                <div class="button-row w-100 d-flex justify-content-between">
+                  <button mat-raised-button class="btn-success" type="submit" [disabled]="service.CustomerForm.invalid">Submit</button>
+                <button  mat-raised-button class="btn-secondary" (click)="onClose()">Cancel</button>
+                 
+                
+                </div>
+              </mat-toolbar>
+            </form>
+        </mat-tab>
+        <mat-tab label="Customer Range"> 
+          
+          <form  [formGroup]="service.CustomerRangeForm" class="normal-form" (submit)="onSubmit1()">
+            <mat-grid-list cols="2" rowHeight="100px">
+              <mat-grid-tile>
+                
+            <div class="controles-container">
+              <mat-form-field>
+                <input formControlName="min" type="number" matInput placeholder="Min">
+                <mat-error>This field is mandatory.</mat-error>
+              </mat-form-field>
+              </div>
+              </mat-grid-tile>
+              <mat-grid-tile>
+       
+                <div class="controles-container">
+              <mat-form-field>
+                <input formControlName="max" type="number" matInput placeholder="Max">
+                <mat-error>This field is mandatory.</mat-error>
+               
+      
+              </mat-form-field>
+            </div>
+            </mat-grid-tile>
+          
+               
+            <mat-grid-tile>
+          
+                <div class="controles-container">
+                  <mat-form-field>
+                    <input formControlName="customerName" matInput placeholder="customer Name">
+                    <mat-error>This field is mandatory.</mat-error>
+                  </mat-form-field>
+                  </div>
+                  </mat-grid-tile>
+                 
+                    <mat-grid-tile>
+                      
+                  <div class="controles-container">
+                  <mat-form-field>
+                    <input formControlName="vrfName" matInput placeholder="VRF Name">
+                    <mat-error>This field is mandatory.</mat-error>
+                  </mat-form-field>
+                  </div>
+                  </mat-grid-tile>
+      </mat-grid-list>
+    
+      <mat-error class="d-inline-block float-left p-3 font-weight-bolder">{{warn}}</mat-error>
+              <!-- <div class="button-row text-right"> -->
+                <mat-toolbar class="bottom">
+                  <div class="button-row d-flex w-100 justify-content-between">
+                    <button mat-raised-button class="btn-success" type="submit" [disabled]="service.CustomerRangeForm.invalid">Submit</button>
+                    <button mat-raised-button class="btn-secondary" (click)="onClose()">Cancel</button>
+                  
+                  </div>
+                </mat-toolbar>
+               
+              
+              <!-- </div> -->
+           
+            
+           
+      
+      
+            </form>
+        </mat-tab>
+       
+      </mat-tab-group>
+
+<div class=""  *ngIf="show">
+      <form  [formGroup]="service.CustomerForm" class="normal-form mt-3" (submit)="onSubmit()">
+        <input type="hidden" formControlName="id">
+        <mat-grid-list cols="2" rowHeight="150px">
+          <mat-grid-tile>
+            
+        <div class="controles-container">
+          <mat-form-field>
+            <input formControlName="customerName" matInput placeholder="customer Name*">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          </div>
+          </mat-grid-tile>
+         
+            <mat-grid-tile>
+              
+          <div class="controles-container">
+          <mat-form-field>
+            <input formControlName="vrfName" matInput placeholder="VRF Name*">
+            <mat-error>This field is mandatory.</mat-error>
+          </mat-form-field>
+          </div>
+          </mat-grid-tile>
+          </mat-grid-list>
+          <mat-error class="d-inline-block float-left p-2 font-weight-bolder">{{warn}}</mat-error>
+          <!-- <div class="button-row float-right"> -->
+            <mat-toolbar class="bottom">
+              <div class="button-row w-100 d-flex justify-content-between">
+               
+                <button mat-raised-button class="btn-success" type="submit" [disabled]="service.CustomerForm.invalid">Submit</button>
+                <button mat-raised-button class="btn-secondary" (click)="onClose()">Cancel</button> 
+              </div>
+            </mat-toolbar>
+           
+            
+          <!-- </div> -->
+       
+        </form>
+      </div>
+
+
+
+
+
+
+      <ngx-spinner type="timer">
+        <h5>Loading</h5>
+      </ngx-spinner>
