@@ -23,6 +23,7 @@ namespace RD_Angular_Core.Server.Controllers
             private readonly IRDDataServices RDDataManager;
             private readonly ILogDataServices LogManager;
             private readonly IMapper Mapper;
+
             public RDDataController(IRDDataServices RDDataManage, ILogDataServices LogManager, IMapper Mapper)
             {
                 this.RDDataManager = RDDataManage;
