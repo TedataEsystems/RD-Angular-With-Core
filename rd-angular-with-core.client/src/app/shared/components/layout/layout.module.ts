@@ -12,9 +12,6 @@ import { DeleteComponent } from '../msg/delete/delete.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoaderComponent } from '../loader/loader.component';
 import { NgxMatDatetimePickerModule, NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
-import { NgxMatMomentModule } from '@angular-material-components/moment-adapter';
-
-
 import { HttpClientModule } from '@angular/common/http';
 import { RangeFormComponent } from '../../../components/range-form/range-form.component';
 import { CustomerRangeComponent } from '../../../components/customer-range/customer-range.component';
@@ -24,7 +21,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { RDComponent } from '../../../components/rd/rd.component';
 import { RDFormComponent } from '../../../components/rd-form/rd-form.component';
 import { UsersComponent } from '../../../components/users/users.component';
-
 
 @NgModule({
   declarations: [
@@ -56,7 +52,6 @@ import { UsersComponent } from '../../../components/users/users.component';
     }),
     NgxMatDatetimePickerModule,
     NgxMatTimepickerModule,
-    NgxMatMomentModule,
     HttpClientModule
   ],
   providers:[Title]

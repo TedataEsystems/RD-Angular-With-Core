@@ -4,7 +4,6 @@ import { MatSort } from '@angular/material/sort';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-
 //import { RequestSerService } from '../../shared/services/request-ser.service';
 import { RDData } from '../../Models/RDData';
 
@@ -428,7 +427,9 @@ export class RDComponent implements OnInit {
     dialogConfig.data= {dialogTitle: "Update"};
     dialogConfig.panelClass='modals-dialog';
     this.dialog.open(RDFormComponent,dialogConfig).afterClosed().subscribe(result => {
+      if(result){
       this.getRequestdata(30,1,'','rD_Id','asc',true);
+      }
       //this.getRequestdata(30, 1, '', 'id', 'asc', true);
     });
   }
@@ -439,11 +440,13 @@ export class RDComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '50%';
-    dialogConfig.height = '397px';
+    dialogConfig.height = '398px';
     dialogConfig.panelClass = 'modals-dialog';
    
     this.dialog.open(RDFormComponent,dialogConfig).afterClosed().subscribe(result => {
+      if(result){
       this.getRequestdata(30,1,'','rD_Id','asc',true);
+      }
       //this.getRequestdata(30, 1, '', 'id', 'asc', true);
     });
   }
@@ -458,7 +461,8 @@ export class RDComponent implements OnInit {
     dialogConfig.panelClass = 'modals-dialog';
     
     this.dialog.open(CustomerRangeComponent,dialogConfig).afterClosed().subscribe(result => {
-      this.getRequestdata(30,1,'','rD_Id','asc',true);
+      if(result){
+      this.getRequestdata(30,1,'','rD_Id','asc',true);}
       //this.getRequestdata(30, 1, '', 'id', 'asc', true);
     });
   }
@@ -471,7 +475,9 @@ export class RDComponent implements OnInit {
     dialogConfig.height = '250px';
     dialogConfig.panelClass = 'modals-dialog';
     this.dialog.open(RangeFormComponent,dialogConfig).afterClosed().subscribe(result => {
+      if(result){
       this.getRequestdata(30,1,'','rD_Id','asc',true);
+      }
       //this.getRequestdata(30, 1, '', 'id', 'asc', true);
     });
   }

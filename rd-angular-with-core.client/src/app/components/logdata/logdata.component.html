@@ -11,12 +11,12 @@
 <div class="search-div" fxLayout="row">
 
 
-    <mat-form-field class="search-form-field" >
+    <div class="search-form-field sr d-flex" >
         <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter()"> 
-       <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+       <button mat-icon-button matSuffix  aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
             <mat-icon>close</mat-icon>
         </button> 
-    </mat-form-field>
+    </div>
 </div>
 
 
@@ -62,7 +62,16 @@
                 <mat-cell *matCellDef="let element" data-label="Creation Date">  {{element.creationDate| date:'medium'}} </mat-cell>
             </ng-container>
          
-           
+            <ng-container matColumnDef="noData">
+                <mat-footer-cell *matFooterCellDef colspan="9">
+                   No Data ...
+                </mat-footer-cell>
+        
+            </ng-container>
+          
+          
+            
+            <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource.data.length==0 && dataSource !=null)}"></mat-footer-row>
             <mat-header-row *matHeaderRowDef="displayedColumns2"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns2;"></mat-row>
            

@@ -7,14 +7,14 @@
   </mat-card-header>
   <mat-divider></mat-divider>
 
-        <div class="search-div w-100" fxLayout="row">
-          <mat-form-field class="search-form-field" >
+        <div class="search-div w-100"  fxLayout="row">
+          <div class="search-form-field sr d-flex" >
             <input matInput [(ngModel)]="searchKey" placeholder="Search" autocomplete="off" (keyup)="applyFilter($event)"> 
-            <button mat-button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
+            <button mat-icon-button matSuffix  aria-label="Clear" *ngIf="searchKey" (click)="onSearchClear()">
                  <mat-icon>close</mat-icon>
              </button> 
             
-         </mat-form-field>
+            </div>
             <div class="generate w-75 text-right pr-3">
               <form [formGroup]="form" (ngSubmit)="onSubmit()" class="example-form">
                   <mat-form-field class="example-full-width mr-2">
@@ -34,7 +34,7 @@
                     
                   </mat-form-field>
                   
-                  <button type="submit" mat-raised-button  [disabled]='isDisable'   class=" sub search example-full-widths">{{'Save'  }}</button>
+                  <button type="submit" mat-raised-button  [disabled]='isDisable'   class="sub search example-full-width">{{'Save'  }}</button>
     
                 </form>
               </div>
@@ -48,10 +48,10 @@
      <ng-container matColumnDef="action">
       <mat-header-cell *matHeaderCellDef mat-sort-header> {{'Action'  }}</mat-header-cell>
       <mat-cell *matCellDef="let row" data-label="Action ">
-        <button mat-button (click)="onEdit(row)" matTooltip="edit" class="btn-success">
+        <button mat-icon-button (click)="onEdit(row)" matTooltip="edit" class="text-success">
             <mat-icon>edit</mat-icon>
         </button>
-        <button mat-button class="btn-danger  mx-1 " (click)="onDelete(row.id)" matTooltip="delete">
+        <button mat-icon-button class="text-danger  mx-1 " (click)="onDelete(row.id)" matTooltip="delete">
           <mat-icon>delete_forever</mat-icon>
       </button>
        
@@ -75,7 +75,16 @@
         <mat-cell *matCellDef="let element" class="desc" data-label="Order in list">  <span *ngIf="element.roleID === 1">Admin</span>  <span *ngIf="element.roleID === 2">User</span> </mat-cell>
       </ng-container>
     
+      <ng-container matColumnDef="noData">
+        <mat-footer-cell *matFooterCellDef colspan="6">
+           No Data ...
+        </mat-footer-cell>
+
+    </ng-container>
+  
+  
     
+    <mat-footer-row *matFooterRowDef="['noData']" [ngClass]="{'hide':!(dataSource.data.length==0 && dataSource !=null)}"></mat-footer-row>
       
           <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
           <mat-row *matRowDef="let row; columns: columnsToDisplay;">

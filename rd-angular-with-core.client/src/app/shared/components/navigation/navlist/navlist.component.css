@@ -11,18 +11,19 @@ a:hover,a:active{
 }
 
 
-.mat-menu-panel{
+.mat-mdc-menu-panel{
 min-width: 250px !important;
 }
-.mat-list-base .list-item {
 
-    color:var(--cr2-color)  !important
-}
-.mat-list-base .list-item.active,.mat-list-base .list-item.active1 {
+.mat-mdc-list-base .list-item.active,.mat-mdc-list-base .list-item.active1 {
 
   color:var(--cr4-color)  !important
 }
-.list-item:hover{
+.mdc-list-item.mdc-list-item--with-one-line {
+  height: 44px !important;
+}
+.mat-mdc-list-item:hover{
+  cursor: pointer;
   box-shadow: inset 0px 0px 5px #d6dadc;
   background-color: transparent;
   
@@ -46,7 +47,7 @@ min-width: 250px !important;
   display: none;
 
 }
-.submenu .mat-list-item{
+.submenu .mat-mdc-list-item{
   /* padding-left: 10px; */
 }
 .submenu.expanded {
@@ -70,7 +71,7 @@ min-width: 250px !important;
     font-size: 13px;
 }
 
-.mat-mdclist-base{
+.mat-mdc-mdclist-base{
   padding-top: 0px;
   padding-top: 0px;
   height: 91.5%;
@@ -122,7 +123,7 @@ min-width: 250px !important;
   /* box-shadow: 4px 4px 6px 0px rgb(0 0 0 / 15%);
     border: 4px solid rgba(204, 204, 204, 0.12); */
 }
-/* .mat-typography h2{
+/* .mat-mdc-typography h2{
   margin-left: 0 !important;
 
 

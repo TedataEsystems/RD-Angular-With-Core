@@ -33,11 +33,12 @@ a{
   
   li span{
     font-size: 14px;
+    vertical-align: super;
   }
   .seconed li span{
     color:var(--cr2-color)
   }
-  .mat-icon-button{
+  .mat-mdc-icon-button{
     border-radius: 0;
     background: #ffffff26;
   }
@@ -173,7 +174,7 @@ a{
   li span{
   font-size: 14px;
   }
-  .mat-icon-button{
+  .mat-mdc-icon-button{
   border-radius: 0;
   background: #ffffff26;
   }

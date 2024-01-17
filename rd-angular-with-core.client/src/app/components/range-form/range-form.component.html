@@ -14,7 +14,7 @@
           
       <div class="controles-container">
         <mat-form-field>
-          <input formControlName="min" type="number" matInput placeholder="Min*">
+          <input formControlName="min" type="number" matInput placeholder="Min*" min="0">
           <mat-error>This field is mandatory.</mat-error>
         </mat-form-field>
         </div>
@@ -23,7 +23,7 @@
  
           <div class="controles-container">
         <mat-form-field>
-          <input formControlName="max" type="number" matInput placeholder="Max*">
+          <input formControlName="max" type="number" matInput placeholder="Max*" min="0">
           <mat-error>This field is mandatory.</mat-error>
          
 
@@ -39,8 +39,8 @@
          
           <mat-toolbar class="bottom">
             <div class="button-row w-100 d-flex justify-content-between">
-              <button mat-raised-button class="btn-success" type="submit" [disabled]="service.RangeForm.invalid">Submit</button>
-              <button mat-raised-button class="btn-secondary"  (click)="onClose()">Cancel</button>
+              <button mat-raised-button class="btn btn-success" type="submit" [disabled]="service.RangeForm.invalid">Submit</button>
+              <button mat-raised-button class="btn btn-secondary"  (click)="onClose()">Cancel</button>
               
             </div>
           </mat-toolbar>
@@ -53,6 +53,4 @@
 
       </form>
 
-      <ngx-spinner type="timer">
-        <h5>Loading</h5>
-      </ngx-spinner>
+ 

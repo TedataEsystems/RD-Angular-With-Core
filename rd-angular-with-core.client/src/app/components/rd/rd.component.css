@@ -110,7 +110,7 @@ li:last-of-type{
     font-weight: 700;
   
   }
-  .mat-button{
+  .mat-mdc-button{
     min-width: 24px !important;
 }
 

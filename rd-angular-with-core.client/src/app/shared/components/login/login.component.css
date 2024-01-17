@@ -42,7 +42,7 @@
    margin: 8em auto 2em auto;
    text-align: center;
 
-   height: 300px;
+   height: 340px;
    /* border-radius:30px 0 30px 0 !important; */
    padding-top: 0px !important;
    color: var(--font-color)!important;
@@ -52,7 +52,7 @@
 
 
  }
- .mat-card:not([class*=mat-elevation-z]){
+ .mat-mdc-card:not([class*=mat-elevation-z]){
    box-shadow: 14px 0px 20px -9px rgb(30 30 31), -14px 10px 20px -9px rgb(30 30 31) !important;
 
  }
