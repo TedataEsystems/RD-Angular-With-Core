@@ -6,8 +6,8 @@ import {Router } from '@angular/router';
   providedIn: 'root'
 })
 export class ConfigureService {
-Apiurl:string = "https://localhost:7277/api/";
-  //  Apiurl:string = "http://172.29.29.108:2024/api/";
+//Apiurl:string = "https://localhost:7277/api/";
+    Apiurl:string = "http://172.29.29.108:2025/api/";
 
 public pIn:number=0;
   constructor(  private router: Router)

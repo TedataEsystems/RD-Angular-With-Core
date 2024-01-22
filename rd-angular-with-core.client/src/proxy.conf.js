@@ -7,7 +7,7 @@ const PROXY_CONFIG = [
       "/users",
       "/LogData"
     ],
-    target: "https://localhost:7277",
+    target: "http://172.29.29.108:2025",
     secure: false
   }
 ]
