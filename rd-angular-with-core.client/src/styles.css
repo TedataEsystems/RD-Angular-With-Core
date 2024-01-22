@@ -348,6 +348,22 @@ overflow: hidden;
            /* table responsive */
 
            @media screen and (max-width: 960px) {
+
+            mat-cell, mat-header-cell{
+              word-wrap: break-word !important;
+              white-space: unset !important;
+              flex: 0 0 180px !important;
+              width: 180px ;
+              overflow-wrap: break-word;
+              word-wrap: break-word;
+              word-break: break-word;
+            padding-right: 5px;
+              -ms-hyphens: auto;
+              -moz-hyphens: auto;
+              -webkit-hyphens: auto;
+              hyphens: auto;
+              
+              }
             .mat-mdc-dialog-container{
               max-width: 100% !important;
             }

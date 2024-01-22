@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navlist.component.css']
 })
 export class NavlistComponent implements OnInit {
-
+isNotAdmin=false
   constructor() { }
 
   ngOnInit(): void {
+    var teamval= localStorage.getItem("userGroup");
+    
+    if(teamval?.toLocaleLowerCase() != 'admin'){
+     
+    this.isNotAdmin=true
+ }
   }
    
  

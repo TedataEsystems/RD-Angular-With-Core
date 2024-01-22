@@ -8,6 +8,8 @@ import { LayoutModule } from './shared/components/layout/layout.module';
 import { LoginModule } from './shared/components/login/login.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { ToastrModule } from 'ngx-toastr';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { interceptorInterceptor } from './shared/interceptors/interceptor.interceptor';
 
 
 
@@ -33,7 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     
   
   ],
-  providers: [],
+ providers: [{provide: HTTP_INTERCEPTORS, useClass: interceptorInterceptor, multi: true } ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
